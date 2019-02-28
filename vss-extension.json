@@ -1,0 +1,74 @@
+{
+    "manifestVersion": 1,
+    "id": "VSTS-SSRS",
+    "version": "0.2.3",
+    "name": "SSRS Deploy",
+    "scopes": [ "vso.work", "vso.work_write" ],
+    "description": "Extension with Continuous Integration support for SSRS",
+    "baseUri": "https://github.com/avdbrink",
+    "publisher": "avdbrink",
+    "public": false,
+    "icons": {
+        "default": "images/logo.png"
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "SQL",
+        "SSRS",
+        "Reporting Services",
+        "Tabular",
+        "Denenv"
+    ],
+    "screenshots": [],
+    "links": {
+        "home": {
+            "uri": "https://github.com/avdbrink"
+        },
+        "getstarted": {
+            "uri": "https://github.com/avdbrink"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/avdbrink"
+    },
+    "branding": {
+        "color": "#f6f7fb",
+        "theme": "light"
+    },
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "files": [
+        {
+            "path": "DeploySSRSTask"
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+
+    ],
+    "contributions": [
+        {
+            "id": "DeploySSRS-task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "type": "ms.vss-distributed-task.task",
+            "properties": {
+                "name": "DeploySSRSTask"
+            }
+        }
+    ]
+}
