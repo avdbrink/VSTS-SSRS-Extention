@@ -17,19 +17,19 @@
 	"version": {
 		"Major": "0",
 		"Minor": "2",
-		"Patch": "3"
+		"Patch": "4"
 	},
 	"minimumAgentVersion": "1.95.0",
 	"instanceNameFormat": "SSRS Deploy of project $(Project)",
 	"groups": [],
 	"inputs": [
     {
-      "name": "Project",
+      "name": "Project, Solution or Folder",
       "type": "filePath",
       "label": "Project",
       "required": true,
       "defaultValue": "",
-      "helpMarkDown": "Provide the .rptproj file containing the project to be deployed."
+      "helpMarkDown": "Provide the .rptproj file containing the project to be deployed\nProvide the .sln file if you have a solution to deploy\nProvide a folder to be searched for report projects."
     },
     {
       "name": "Configuration",
@@ -100,7 +100,7 @@
       "label": "Create subfolder if multiple reports",
       "defaultValue": "true",
       "required": true,
-      "helpMarkDown": "If checked a subfolder will be created for this project if it contains more than 1 report file (*.rdl). If only one report file is found no subfolder will be created. The name of the  subfolder will be the same as the name of the reporting project."
+      "helpMarkDown": "If checked a subfolder will be created for deployed projects if they contain more than 1 report file (*.rdl). If only one report file is found no subfolder will be created. The name of the  subfolder will be the same as the name of the reporting project. This will be done on a per project base."
     }],
 	"execution": {
 		"PowerShell3": {

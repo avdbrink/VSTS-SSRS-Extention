@@ -1,13 +1,13 @@
 {
     "manifestVersion": 1,
     "id": "VSTS-SSRS",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "name": "SSRS Deploy",
     "scopes": [ "vso.work", "vso.work_write" ],
     "description": "Extension with Continuous Integration support for SSRS",
     "baseUri": "https://github.com/avdbrink",
     "publisher": "avdbrink",
-    "public": false,
+    "public": true,
     "icons": {
         "default": "images/logo.png"
     },
@@ -17,7 +17,7 @@
         }
     ],
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "tags": [
         "SQL",
