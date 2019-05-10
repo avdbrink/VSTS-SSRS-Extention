@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "VSTS-SSRS",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "name": "SSRS Deploy",
     "scopes": [ "vso.work", "vso.work_write" ],
     "description": "Extension with Continuous Integration support for SSRS",
@@ -17,7 +17,7 @@
         }
     ],
     "categories": [
-        "Azure Pipelines"
+        "Build and release"
     ],
     "tags": [
         "SQL",
