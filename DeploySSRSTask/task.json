@@ -24,9 +24,9 @@
 	"groups": [],
 	"inputs": [
     {
-      "name": "Project, Solution or Folder",
+      "name": "Project",
       "type": "filePath",
-      "label": "Project",
+      "label": "Project, Solution or Folder",
       "required": true,
       "defaultValue": "",
       "helpMarkDown": "Provide the .rptproj file containing the project to be deployed\nProvide the .sln file if you have a solution to deploy\nProvide a folder to be searched for report projects."
