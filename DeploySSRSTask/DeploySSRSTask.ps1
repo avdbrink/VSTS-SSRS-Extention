@@ -184,9 +184,9 @@ try {
 	$devenv = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.com"
 	if (!(Test-Path($devenv))) {
 		# Determine location of devenv.com
-		$devenv = (Get-ChildItem D:\ -Filter "devenv.com" -Recurse -Name)
+		$devenv = (Get-ChildItem D:\ -Filter "devenv.com" -Recurse -Name | Select-Object -First 1)
 		if ([string]::IsNullOrEmpty($devenv)) {
-			$devenv = (Get-ChildItem C:\ -Filter "devenv.com" -Recurse -Name)
+			$devenv = (Get-ChildItem C:\ -Filter "devenv.com" -Recurse -Name | Select-Object -First 1)
 			$devenv = "C:\$devenv"
 		}
 		else {
