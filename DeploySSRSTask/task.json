@@ -47,6 +47,14 @@
       "helpMarkDown": "If true (default): all configuration values from this page will be used. If false: all configuration values from the Report project will be used. EXCEPTION: The OutputPath variable from the project wil be used to locate the binaries, even if this value is true."
     },
     {
+      "name": "TargetServerVersion",
+      "type": "string",
+      "label": "Server Version",
+      "required": true,
+      "defaultValue": "SSRS2008R2",
+      "helpMarkDown": "Provide the Report Server Version like, SSRS2008R2, or SSRS2016."
+    },
+    {
       "name": "TargetServerURL",
       "type": "string",
       "label": "Server URL",

@@ -149,6 +149,7 @@ try {
 	$Project = EscapeSpecialChars -str (Get-VstsInput -Name Project -Require)
 	$Configuration = EscapeSpecialChars -str (Get-VstsInput -Name Configuration -Require)
 	$OverwriteProjectConfiguration = Get-VstsInput -Name OverwriteProjectConfiguration -Require -AsBool
+	$TargetServerVersion = EscapeSpecialChars -str (Get-VstsInput -Name TargetServerVersion -Require)
 	$TargetServerURL = EscapeSpecialChars -str (Get-VstsInput -Name TargetServerURL -Require)
 	$TargetFolder = EscapeSpecialChars -str (Get-VstsInput -Name TargetFolder -Require)
 	$DataSourceFolder = EscapeSpecialChars -str (Get-VstsInput -Name DataSourceFolder -Require)
@@ -161,6 +162,7 @@ try {
     Write-Host "Project = $Project"
     Write-Host "Configuration = $Configuration"
     Write-Host "OverwriteProjectConfiguration = $OverwriteProjectConfiguration"
+    Write-Host "TargetServerVersion = $TargetServerVersion"
     Write-Host "TargetServerURL = $TargetServerURL"
     Write-Host "TargetFolder = $TargetFolder"
     Write-Host "DataSourceFolder = $DataSourceFolder"
@@ -219,7 +221,7 @@ try {
         Write-host "Initiate $Project"
         Write-host "=================================================================="
         Write-host "Set config for $($Project)"
-        SetProjectConfig -projpath ($Project) -CreateSubfolders $CreateSubfolders      
+        SetProjectConfig -projpath ($Project) -TargetServerVersion $TargetServerVersion -CreateSubfolders $CreateSubfolders      
         Write-host "Deploy $($Project)"
         DeploySsrsProject($Project)
        
@@ -233,7 +235,7 @@ try {
             Write-host "Initiate $($_.FullName)"
             Write-host "=================================================================="
             Write-host "Set config for $($_.FullName)"
-			SetProjectConfig -projpath ($_.FullName) -CreateSubfolders $CreateSubfolders  
+			SetProjectConfig -projpath ($_.FullName) -TargetServerVersion $TargetServerVersion -CreateSubfolders $CreateSubfolders  
             Write-host "Deploy $($_.FullName)"
             DeploySsrsProject($_.FullName)
        }    
@@ -246,7 +248,7 @@ try {
             Write-host "Initiate $($_.FullName)"
             Write-host "=================================================================="
             Write-host "Set config for $($_.FullName)"
-			SetProjectConfig -projpath ($_.FullName) -CreateSubfolders $CreateSubfolders      
+			SetProjectConfig -projpath ($_.FullName) -TargetServerVersion $TargetServerVersion -CreateSubfolders $CreateSubfolders      
           
             Write-host "Deploy $($_.FullName)"
             DeploySsrsProject($_.FullName)
