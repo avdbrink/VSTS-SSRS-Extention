@@ -25,7 +25,7 @@
 > [File an issue](https://github.com/avdbrink/VSTS-SSRS-Extention/issues)
 
 ## Latest Updates
-> * None so far
+> * jbarber2016: added functionality to pick just one devenv executable instead of multiple and resulting in errors if multiple versions are installed
 
 ## TODO:
 > * multiple report projects in a single solution cause an error during deployment

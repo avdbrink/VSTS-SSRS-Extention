@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "VSTS-SSRS",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "name": "SSRS Deploy",
     "scopes": [ "vso.work", "vso.work_write" ],
     "description": "Extension with Continuous Integration support for SSRS",
