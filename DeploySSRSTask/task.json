@@ -17,7 +17,7 @@
 	"version": {
 		"Major": "0",
 		"Minor": "2",
-		"Patch": "6"
+		"Patch": "7"
 	},
 	"minimumAgentVersion": "1.95.0",
 	"instanceNameFormat": "SSRS Deploy of project $(Project)",
@@ -101,6 +101,14 @@
       "defaultValue": "true",
       "required": true,
       "helpMarkDown": "If checked a subfolder will be created for deployed projects if they contain more than 1 report file (*.rdl). If only one report file is found no subfolder will be created. The name of the  subfolder will be the same as the name of the reporting project. This will be done on a per project base."
+    },
+    {
+      "name": "PathToDevEnv",
+      "type": "string",
+      "label": "Path to devenv",
+      "required": true,
+      "defaultValue": "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.com",
+      "helpMarkDown": "Provide the full path to devenv.com for the version you wish to use"
     }],
 	"execution": {
 		"PowerShell3": {

@@ -155,7 +155,8 @@ try {
 	$DataSetFolder = EscapeSpecialChars -str (Get-VstsInput -Name DataSetFolder -Require)
 	$OverwriteDataSources = EscapeSpecialChars -str (Get-VstsInput -Name OverwriteDataSources -Require)
 	$OverwriteDatasets = EscapeSpecialChars -str (Get-VstsInput -Name OverwriteDatasets -Require)
-	$CreateSubfolders = Get-VstsInput -Name CreateSubfolders -Require -AsBool
+    $CreateSubfolders = Get-VstsInput -Name CreateSubfolders -Require -AsBool
+    $PathToDevEnv = EscapeSpecialChars -str (Get-VstsInput -Name PathToDevEnv -Require)
 	
     Write-Host "Entering script SSRSDeploy.ps1"
     Write-Host "Project = $Project"
@@ -181,7 +182,8 @@ try {
 
 	# Determine location of devenv.com
 	# Default to the standard, if not available search will be started (takes more time)
-	$devenv = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.com"
+    #$devenv = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.com"
+    $devenv = $PathToDevEnv
 	if (!(Test-Path($devenv))) {
 		# Determine location of devenv.com
 		$devenv = (Get-ChildItem D:\ -Filter "devenv.com" -Recurse -Name | Select-Object -First 1)
